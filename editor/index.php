@@ -9,6 +9,7 @@
 
 namespace Adminer;
 
+define('Adminer\PROJECT', basename(__DIR__));
 include "../adminer/include/bootstrap.inc.php";
 add_driver(DRIVER, lang('Login'));
 

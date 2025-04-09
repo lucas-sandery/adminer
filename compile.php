@@ -271,6 +271,7 @@ $features = array("check", "call" => "routine", "dump", "event", "privileges", "
 $lang_ids = array(); // global variable simplifies usage in a callback function
 $file = file_get_contents(__DIR__ . "/$project/index.php");
 $file = preg_replace('~\*/~', "* @version " . Adminer\VERSION . "\n*/", $file, 1);
+$file = preg_replace("/^define\('Adminer\\\\PROJECT', \Kbasename\(__DIR__\)/m", var_export($project, true), $file, 1);
 if ($vendor) {
 	$_GET[$vendor] = true; // to load the driver
 	include_once __DIR__ . $driver_path;

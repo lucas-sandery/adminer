@@ -10,6 +10,7 @@
 
 namespace Adminer;
 
+define('Adminer\PROJECT', basename(__DIR__));
 include "./include/bootstrap.inc.php";
 include "./include/tmpfile.inc.php";
 
